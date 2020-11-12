@@ -1,0 +1,21 @@
+name: Docker
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    env:
+      REPOSITORY_URL: ${{ secrets.REPOSITORY_URL }}
+      REPOSITORY_NAME: ${{ secrets.REPOSITORY_NAME }}
+      REPOSITORY_USER: ${{ secrets.REPOSITORY_USER }}
+      REPOSITORY_PASSWORD: ${{ secrets.REPOSITORY_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build the Docker image
+        run: ./build.sh
+      - name: Publish the Docker image
+        run: ./publish.sh
+        
