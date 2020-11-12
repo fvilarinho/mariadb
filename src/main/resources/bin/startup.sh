@@ -1,49 +1,44 @@
 #!/bin/bash
 
+source $BIN_DIR/functions.sh
+
 echo "Gathering the service settings..."
 
-SETTINGS=
-CONT=0
+SETTINGS=$(getCredentials)
+NAME=`echo $SETTINGS | jq -r .name`
+USER=`echo $SETTINGS | jq -r .user`
+PASSWORD=`echo $SETTINGS | jq -r .password`
+PORT=`echo $SETTINGS | jq -r .port`
 
-while [ true ];
-do
-	SETTINGS=`etcdctl --endpoints=$SETTINGS_URL get $APP_NAME`
-	
-	if [ -z "$SETTINGS" ]; then
-		sleep 1	
-		
-		if [ $CONT == 0 ]; then
-			echo "Waiting for the settings be defined..."
-			
-			CONT=1
-		fi
-	else
-		break
-	fi
-done
+export NAME
+export USER
+export PASSWORD
+export PORT
 
-echo "Starting the service..."
+echo "Service settings were gathered!"
 
 $BIN_DIR/install.sh
+
+echo "Starting the service..."
 
 mysqld --user=root --console &
 
 while [ true ];
 do
-	PID=`mysql `
+	RESULT=`netstat -an|grep $PORT|grep LISTEN`
 	
-	if [ ! -z "$PID" ]; then
+	if [ -z "$RESULT" ]; then
 		sleep 1
 	else
-		echo "Stopping the service..."
-		
 		break
 	fi
 done
 
-
-
 echo "Service started!"
+
+$BIN_DIR/permissions.sh
+
+flyway -user="${USER}" -password="${PASSWORD}" migrate
 
 while [ true ];
 do
@@ -52,10 +47,6 @@ do
 	if [ ! -z "$PID" ]; then
 		sleep 1
 	else
-		echo "Stopping the service..."
-		
 		break
 	fi
 done
-
-echo "Service stopped!"

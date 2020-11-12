@@ -9,6 +9,9 @@ services:
     hostname: mariadb
     ports: 
       - 3306:3306
+    volumes:
+      - mariadb-data:/opt/concepting/data  
+      - mariadb-log:/opt/concepting/log  
     depends_on:
       - etcd
       
@@ -19,5 +22,11 @@ services:
     ports: 
       - 2379:2379
     volumes:
-      - ./src/main/resources/etc/default.json:/opt/concepting/etc/mariadb.json  
-    
+      - ./src/main/resources/etc/default.json:/opt/concepting/etc/mariadb.json
+      - etcd-data:/opt/concepting/data
+
+volumes:
+  mariadb-data:
+  mariadb-log:
+  etcd-data:
+  
