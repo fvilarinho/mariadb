@@ -22,7 +22,7 @@ services:
     ports: 
       - 2379:2379
     volumes:
-      - ./src/main/resources/etc/default.json:/opt/concepting/etc/mariadb.json
+      - ./etc/default.json:/opt/concepting/etc/mariadb.json
       - etcd-data:/opt/concepting/data
 
 volumes:
