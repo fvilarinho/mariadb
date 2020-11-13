@@ -33,10 +33,10 @@ RUN mkdir -p /run/mysqld \
     ln -s ${SQL_DIR} /opt/flyway/sql && \        
     rm -f /etc/my.cnf
 
-COPY src/main/resources/bin/* ${BIN_DIR}/
-COPY src/main/resources/etc/my.cnf ${ETC_DIR}/
-COPY src/main/resources/etc/flyway.conf ${ETC_DIR}/
-COPY src/main/resources/sql/* ${SQL_DIR}/
+COPY bin/* ${BIN_DIR}/
+COPY etc/my.cnf ${ETC_DIR}/
+COPY etc/flyway.conf ${ETC_DIR}/
+COPY sql/* ${SQL_DIR}/
 
 RUN chmod +x ${BIN_DIR}/*.sh && \
     ln -s ${BIN_DIR}/startup.sh /entrypoint.sh
