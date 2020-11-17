@@ -1,4 +1,9 @@
 #!/bin/bash
 
-docker push $REPOSITORY_URL/$REPOSITORY_NAME/mariadb:latest
-docker push $REPOSITORY_URL/$REPOSITORY_NAME/mariadb:1.0.0
+export BUILD_VERSION=1.0.0
+
+docker-compose push
+
+export BUILD_VERSION=latest
+
+docker-compose push

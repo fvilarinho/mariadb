@@ -4,7 +4,7 @@ services:
   mariadb:
     build:
       context: .
-    image: ghcr.io/concepting-com-br/mariadb:1.0.0
+    image: ghcr.io/concepting-com-br/mariadb:${BUILD_VERSION}
     container_name: mariadb
     hostname: mariadb
     ports: 
