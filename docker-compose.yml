@@ -10,8 +10,8 @@ services:
     ports: 
       - 3306:3306
     volumes:
-      - mariadb-data:/opt/concepting/data  
-      - mariadb-log:/opt/concepting/log  
+      - mariadb-data:/home/user/data  
+      - mariadb-log:/home/user/log  
     depends_on:
       - etcd
       
@@ -22,8 +22,8 @@ services:
     ports: 
       - 2379:2379
     volumes:
-      - ./etc/default.json:/opt/concepting/etc/mariadb.json
-      - etcd-data:/opt/concepting/data
+      - ./etc/default.json:/home/user/etc/mariadb.json
+      - etcd-data:/home/user/data
 
 volumes:
   mariadb-data:

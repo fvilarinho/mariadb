@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo "Service is initializing..." 
-
 cp $ETC_DIR/my.cnf /tmp/my.cnf
 sed -i -e 's|${PORT}|'"$PORT"'|g' /tmp/my.cnf
 sed -i -e 's|${DATA_DIR}|'"$DATA_DIR"'|g' /tmp/my.cnf
@@ -16,10 +14,6 @@ sed -i -e 's|${PORT}|'"$PORT"'|g' /tmp/flyway.conf
 sed -i -e 's|${APP_NAME}|'"$APP_NAME"'|g' /tmp/flyway.conf
 cp /tmp/flyway.conf /opt/flyway/conf
 
-if [ -d $DATA_DIR/mysql ]; then
-	echo "Service already initialized!" 
-else
+if [ ! -d $DATA_DIR/mysql ]; then
 	mysql_install_db --user=root
-	
-	echo "Service was initialized!"
 fi

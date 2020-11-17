@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build the Docker image
-        run: ./build.sh
+        run: docker-compose build
       - name: Publish the Docker image
         run: ./publish.sh
         

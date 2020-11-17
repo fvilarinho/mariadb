@@ -4,10 +4,6 @@ LABEL maintainer="fvilarinho@concepting.com.br"
 
 ENV APP_NAME=mariadb
 
-ENV SETTINGS_HOSTNAME=host.docker.internal
-ENV SETTINGS_PORT=2379
-ENV SETTINGS_URL=http://${SETTINGS_HOSTNAME}:${SETTINGS_PORT}
-
 ENV SQL_DIR=${HOME_DIR}/sql
 
 USER root
@@ -33,14 +29,15 @@ RUN mkdir -p /run/mysqld \
     ln -s ${SQL_DIR} /opt/flyway/sql && \        
     rm -f /etc/my.cnf
 
-COPY bin/* ${BIN_DIR}/
+COPY bin/startup.sh ${BIN_DIR}/${APP_NAME}-startup.sh
+COPY bin/install.sh ${BIN_DIR}/${APP_NAME}-install.sh
+COPY bin/permissions.sh ${BIN_DIR}/${APP_NAME}-permissions.sh
 COPY etc/my.cnf ${ETC_DIR}/
 COPY etc/flyway.conf ${ETC_DIR}/
 COPY sql/* ${SQL_DIR}/
 
-RUN chmod +x ${BIN_DIR}/*.sh && \
-    ln -s ${BIN_DIR}/startup.sh /entrypoint.sh
+RUN chmod +x ${BIN_DIR}/*.sh
     
 EXPOSE 3306
     
-ENTRYPOINT ["/entrypoint.sh"]
+CMD ["${BIN_DIR}/${APP_NAME}-startup.sh"]
