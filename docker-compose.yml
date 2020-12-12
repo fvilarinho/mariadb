@@ -22,7 +22,7 @@ services:
     ports: 
       - 2379:2379
     volumes:
-      - ./etc/default.json:/home/user/etc/mariadb.json
+      - ./etc/settings.json:/home/user/etc/mariadb.json
       - etcd-data:/home/user/data
 
 volumes:
