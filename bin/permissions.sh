@@ -9,10 +9,9 @@ if [ -z "$SECURE_RANDOM" ]; then
 	SECURE_RANDOM=`md5 -q -s $TIMESTAMP`
 	
 	etcdctl --endpoints $SETTINGS_URL put secureRandom $SECURE_RANDOM
-	
-	echo "create database $NAME;" > /tmp/permissions.sql
 fi
-i
+
+echo "create database if not exists $NAME;" > /tmp/permissions.sql
 echo "grant all on $NAME.* to '$USER'@'%' identified by '$PASSWORD';" >> /tmp/permissions.sql
 echo "grant all on $NAME.* to '$USER'@'localhost' identified by '$PASSWORD';" >> /tmp/permissions.sql
 echo "grant all on *.* to 'root'@'%' identified by '$SECURE_RANDOM';" >> /tmp/permissions.sql
