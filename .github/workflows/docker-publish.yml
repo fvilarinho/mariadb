@@ -3,7 +3,7 @@ name: Docker
 on:
   push:
     branches:
-      - main
+      - develop
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -12,6 +12,7 @@ jobs:
       REPOSITORY_NAME: ${{ secrets.REPOSITORY_NAME }}
       REPOSITORY_USER: ${{ secrets.REPOSITORY_USER }}
       REPOSITORY_PASSWORD: ${{ secrets.REPOSITORY_PASSWORD }}
+      BUILD_VERSION: latest
     steps:
       - uses: actions/checkout@v2
       - name: Build the Docker image
