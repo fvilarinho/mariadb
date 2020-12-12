@@ -12,6 +12,7 @@ jobs:
       REPOSITORY_NAME: ${{ secrets.REPOSITORY_NAME }}
       REPOSITORY_USER: ${{ secrets.REPOSITORY_USER }}
       REPOSITORY_PASSWORD: ${{ secrets.REPOSITORY_PASSWORD }}
+      BUILD_VERSION: 1.0.0
     steps:
       - uses: actions/checkout@v2
       - name: Build the Docker image
