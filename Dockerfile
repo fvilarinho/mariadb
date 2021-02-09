@@ -2,8 +2,6 @@ FROM ghcr.io/concepting-com-br/base-java-image:1.0.0
 
 LABEL maintainer="fvilarinho@concepting.com.br"
 
-ENV APP_NAME=mariadb
-
 ENV SQL_DIR=${HOME_DIR}/sql
 
 USER root
@@ -29,15 +27,16 @@ RUN mkdir -p /run/mysqld \
     ln -s ${SQL_DIR} /opt/flyway/sql && \        
     rm -f /etc/my.cnf
 
-COPY bin/startup.sh ${BIN_DIR}/${APP_NAME}-startup.sh
-COPY bin/install.sh ${BIN_DIR}/${APP_NAME}-install.sh
-COPY bin/permissions.sh ${BIN_DIR}/${APP_NAME}-permissions.sh
+COPY bin/startup.sh ${BIN_DIR}/child-startup.sh
+COPY bin/install.sh ${BIN_DIR}/child-install.sh
+COPY bin/permissions.sh ${BIN_DIR}/child-permissions.sh
 COPY etc/my.cnf ${ETC_DIR}/
 COPY etc/flyway.conf ${ETC_DIR}/
 COPY sql/* ${SQL_DIR}/
+COPY .env ${ETC_DIR}/
 
 RUN chmod +x ${BIN_DIR}/*.sh
     
 EXPOSE 3306
     
-CMD ["${BIN_DIR}/${APP_NAME}-startup.sh"]
+CMD ["${BIN_DIR}/child-startup.sh"]

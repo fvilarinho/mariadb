@@ -8,7 +8,7 @@ export NAME
 export USER
 export PASSWORD
 
-$BIN_DIR/$APP_NAME-install.sh
+$BIN_DIR/child-install.sh
 
 mysqld --user=root --console &
 
@@ -23,7 +23,7 @@ do
 	fi
 done
 
-$BIN_DIR/$APP_NAME-permissions.sh
+$BIN_DIR/child-permissions.sh
 
 if [ -f "$SQL_DIR/V1__init.sql" ]; then
 	echo "Creating the database..."

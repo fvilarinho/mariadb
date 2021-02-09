@@ -3,7 +3,7 @@ name: Docker
 on:
   push:
     branches:
-      - develop
+      - '*'
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -11,7 +11,6 @@ jobs:
       DOCKER_REGISTRY_URL: ${{ secrets.DOCKER_REGISTRY_URL }}
       DOCKER_REGISTRY_USER: ${{ secrets.DOCKER_REGISTRY_USER }}
       DOCKER_REGISTRY_PASSWORD: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
-      BUILD_VERSION: latest
     steps:
       - uses: actions/checkout@v2
       - name: Build the Docker image
