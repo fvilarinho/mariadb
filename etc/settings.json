@@ -2,5 +2,7 @@
 	"name": "test",
 	"port": 3306,
 	"user": "user",
-	"password": "!User@2020#"
+	"password": "!User@2020#",
+	"buildName": "mariadb",
+	"buildVersion": "1.0.0"
 }

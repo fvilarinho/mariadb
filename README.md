@@ -15,8 +15,6 @@ All scripts will be checked in the bootstrap and applied in the database if it w
 Build status
 ============
 
-The last stable version is 1.0.0
-
 ![CI/CD](https://github.com/concepting-com-br/mariadb/workflows/Docker/badge.svg)
 
 
@@ -25,9 +23,7 @@ Installation
 
 To use this image, just put the line below in your Dockerfile.
 
-`FROM ghcr.io/concepting-com-br/mariadb:1.0.0` - To use the last stable version.
-
-`FROM ghcr.io/concepting-com-br/mariadb:latest` - To user the development version.
+`FROM ghcr.io/concepting-com-br/mariadb:latest`
 
 
 License
