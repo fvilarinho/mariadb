@@ -18,8 +18,8 @@ Build status
 ![CI/CD](https://github.com/concepting-com-br/mariadb/workflows/Docker/badge.svg)
 
 
-Installation
-============
+How to use
+==========
 
 Just put the line below in your Dockerfile.
 
