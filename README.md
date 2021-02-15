@@ -21,9 +21,11 @@ Build status
 Installation
 ============
 
-To use this image, just put the line below in your Dockerfile.
+Just put the line below in your Dockerfile.
 
-`FROM ghcr.io/concepting-com-br/mariadb:latest`
+`FROM ghcr.io/concepting-com-br/mariadb:1.0.0` - To use the last stable version.
+
+`FROM ghcr.io/concepting-com-br/mariadb:latest` - To use the development version.
 
 
 License
