@@ -15,7 +15,7 @@ All scripts will be checked in the bootstrap and applied in the database if it w
 Build status
 ============
 
-![CI/CD](https://github.com/concepting-com-br/mariadb/workflows/Docker/badge.svg)
+![CI/CD](https://github.com/concepting-com-br/mariadb/workflows/CI/CD/badge.svg)
 
 
 How to use
