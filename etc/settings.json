@@ -14,11 +14,11 @@
 		"value": "user"
 	},
 	"password": {
-		"description": "Password to be used by the connections.";
+		"description": "Password to be used by the connections.",
 		"value": "!User@2021#"
 	},
 	"databaseName": {
-		"description": "Mame of the database to be used by the connections.";
+		"description": "Mame of the database to be used by the connections.",
 		"value": "test"
 	},
 	"port": {
