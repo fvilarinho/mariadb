@@ -1,12 +1,12 @@
 #!/bin/bash
 
-NAME=`echo $SETTINGS | jq -r .name`
-USER=`echo $SETTINGS | jq -r .user`
-PASSWORD=`echo $SETTINGS | jq -r .password`
+USER=`echo $SETTINGS | jq -r .user.value`
+PASSWORD=`echo $SETTINGS | jq -r .password.value`
+DATABASE_NAME=`echo $SETTINGS | jq -r .databaseName.value`
 
-export NAME
 export USER
 export PASSWORD
+export DATABASE_NAME
 
 $BIN_DIR/child-install.sh
 

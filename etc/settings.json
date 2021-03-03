@@ -1,8 +1,28 @@
 {
-	"name": "test",
-	"port": 3306,
-	"user": "user",
-	"password": "!User@2020#",
-	"buildName": "mariadb",
-	"buildVersion": "latest"
+	"build":{
+		"name": {
+			"description": "Name of the build.",
+			"value": "mariadb"
+		},
+		"version": {
+			"description": "Version of the build.",
+			"value": "latest"
+		}
+	},
+	"user": {
+		"description": "User name to be used by the connections.",
+		"value": "user"
+	},
+	"password": {
+		"description": "Password to be used by the connections.";
+		"value": "!User@2021#"
+	},
+	"databaseName": {
+		"description": "Mame of the database to be used by the connections.";
+		"value": "test"
+	},
+	"port": {
+		"description": "Network port to listen the requests.",
+		"value": 2379
+	}
 }

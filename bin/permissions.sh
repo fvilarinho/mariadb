@@ -11,9 +11,9 @@ if [ -z "$SECURE_RANDOM" ]; then
 	etcdctl --endpoints $SETTINGS_URL put secureRandom $SECURE_RANDOM
 fi
 
-echo "create database if not exists $NAME;" > /tmp/permissions.sql
-echo "grant all on $NAME.* to '$USER'@'%' identified by '$PASSWORD';" >> /tmp/permissions.sql
-echo "grant all on $NAME.* to '$USER'@'localhost' identified by '$PASSWORD';" >> /tmp/permissions.sql
+echo "create database if not exists $DATABASE_NAME;" > /tmp/permissions.sql
+echo "grant all on $DATABASE_NAME.* to '$USER'@'%' identified by '$PASSWORD';" >> /tmp/permissions.sql
+echo "grant all on $DATABASE_NAME.* to '$USER'@'localhost' identified by '$PASSWORD';" >> /tmp/permissions.sql
 echo "grant all on *.* to 'root'@'%' identified by '$SECURE_RANDOM';" >> /tmp/permissions.sql
 echo "grant all on *.* to 'root'@'localhost' identified by '$SECURE_RANDOM';" >> /tmp/permissions.sql
 echo "delete from mysql.user where User = '';" >> /tmp/permissions.sql
