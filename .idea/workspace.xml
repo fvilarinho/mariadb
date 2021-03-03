@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4051f296-94cd-491d-9b9d-fc6773fa786e" name="Default Changelist" comment="Bug fixes.">
-      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/bin/install.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/permissions.sh" beforeDir="false" afterPath="$PROJECT_DIR$/bin/permissions.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/startup.sh" beforeDir="false" afterPath="$PROJECT_DIR$/bin/startup.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/build.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/etc/flyway.conf" beforeDir="false" afterPath="$PROJECT_DIR$/etc/flyway.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/etc/my.cnf" beforeDir="false" afterPath="$PROJECT_DIR$/etc/my.cnf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/etc/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/etc/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publish.sh" beforeDir="false" afterPath="$PROJECT_DIR$/publish.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start.sh" beforeDir="false" afterPath="$PROJECT_DIR$/start.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stop.sh" beforeDir="false" afterPath="$PROJECT_DIR$/stop.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +11,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1pDcj679WPKBkAyZ2RDwNnE63ik" />
