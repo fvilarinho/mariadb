@@ -23,6 +23,6 @@
 	},
 	"port": {
 		"description": "Network port to listen the requests.",
-		"value": 2379
+		"value": 3306
 	}
 }
