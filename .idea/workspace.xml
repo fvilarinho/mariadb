@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4051f296-94cd-491d-9b9d-fc6773fa786e" name="Default Changelist" comment="Bug fixes.">
+    <list default="true" id="c196e19d-7bcd-4ddc-a80e-00f666eee870" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/bin/install.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/startup.sh" beforeDir="false" afterPath="$PROJECT_DIR$/bin/startup.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
