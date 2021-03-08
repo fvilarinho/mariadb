@@ -28,11 +28,11 @@ $BIN_DIR/child-permissions.sh
 if [ -f "$SQL_DIR/V1__init.sql" ]; then
 	echo "Creating the database..."
 	
-	mysql -u $USER -p"$PASSWORD" $NAME < $SQL_DIR/V1__init.sql
+	mysql -u $USER -p"$PASSWORD" $DATABASE_NAME < $SQL_DIR/V1__init.sql
 	
 	mv $SQL_DIR/V1__init.sql $SQL_DIR/V1__init.sql.applied
 	
-	mysql -u $USER -p"$PASSWORD" $NAME -e "drop table flyway_schema_history;"
+	mysql -u $USER -p"$PASSWORD" $DATABASE_NAME -e "drop table flyway_schema_history;"
 	
 	flyway -user="$USER" -password="$PASSWORD" baseline
 	
