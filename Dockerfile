@@ -39,7 +39,6 @@ RUN chmod +x ${BIN_DIR}/child-*.sh && \
     chown -R user:group ${HOME_DIR}/
     chmod -R o-rwx ${HOME_DIR}/
 
-    
 EXPOSE 3306
     
 CMD ["${BIN_DIR}/child-startup.sh"]
