@@ -35,8 +35,10 @@ COPY etc/flyway.conf ${ETC_DIR}/
 COPY sql/* ${SQL_DIR}/
 COPY .env ${ETC_DIR}/
 
-RUN chmod +x ${BIN_DIR}/*.sh
-    
+RUN chmod +x ${BIN_DIR}/child-*.sh && \
+    chown -R user:group ${HOME_DIR}/
+    chmod -R o-rwx ${HOME_DIR}/
+
 EXPOSE 3306
     
 CMD ["${BIN_DIR}/child-startup.sh"]
