@@ -4,9 +4,9 @@ services:
   mariadb:
     build:
       context: .
-    image: ghcr.io/concepting-com-br/mariadb:${BUILD_VERSION}
-    container_name: mariadb
-    hostname: mariadb
+    image: ghcr.io/concepting-com-br/${BUILD_NAME}:${BUILD_VERSION}
+    container_name: ${BUILD_NAME}
+    hostname: ${BUILD_NAME}
     ports: 
       - "3306:3306"
     volumes:
@@ -16,7 +16,7 @@ services:
       - etcd
       
   etcd:
-    image: ghcr.io/concepting-com-br/etcd:1.0.0
+    image: ghcr.io/concepting-com-br/etcd:1.1.0
     container_name: etcd
     hostname: etcd
     ports: 
