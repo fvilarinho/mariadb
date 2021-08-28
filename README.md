@@ -2,7 +2,7 @@ Synopsys
 ========
 
 This a base image for the usage of a relational database.
-It uses the `ghcr.io/concepting-com-br/base-image` and [mariadb](https://mariadb.org/).
+It uses the `ghcr.io/fvilarinho/base-image` and [mariadb](https://mariadb.org/).
 It also uses [flyway](https://flywaydb.org) to control the versions and states of the schemas.
 The configurations/settings are defined using the JSON format and stored in the `etc` directory.
 The scripts are stored in the `sql` directory and must follow the standard below:
@@ -15,7 +15,7 @@ All scripts will be checked in the bootstrap and applied in the database if it w
 Build status
 ============
 
-![CI/CD](https://github.com/concepting-com-br/mariadb/workflows/CI/CD/badge.svg)
+![CI/CD](https://github.com/fvilarinho/mariadb/workflows/CI/CD/badge.svg)
 
 
 How to use
@@ -23,9 +23,9 @@ How to use
 
 Just put the line below in your Dockerfile.
 
-`FROM ghcr.io/concepting-com-br/mariadb:1.0.0` - To use the last stable version.
+`FROM ghcr.io/fvilarinho/mariadb:1.1.0` - To use the last stable version.
 
-`FROM ghcr.io/concepting-com-br/mariadb:latest` - To use the development version.
+`FROM ghcr.io/fvilarinho/mariadb:latest` - To use the development version.
 
 
 License
