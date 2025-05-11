@@ -1,14 +1,4 @@
 {
-	"build":{
-		"name": {
-			"description": "Name of the build.",
-			"value": "mariadb"
-		},
-		"version": {
-			"description": "Version of the build.",
-			"value": "1.1.0"
-		}
-	},
 	"user": {
 		"description": "User name to be used by the connections.",
 		"value": "user"
