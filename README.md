@@ -12,12 +12,6 @@ The scripts are stored in the `sql` directory and must follow the standard below
 All scripts will be checked in the bootstrap and applied in the database if it wasn't yet.
 
 
-Build status
-============
-
-![CI/CD](https://github.com/fvilarinho/mariadb/workflows/CI/CD/badge.svg)
-
-
 How to use
 ==========
 
@@ -34,15 +28,13 @@ License
 This image is licensed under the Apache 2.0. Please read the licence file or check the URL [https://www.apache.org/licenses/LICENSE-2.0.txt](https://www.apache.org/licenses/LICENSE-2.0.txt)
 
 
-Author
-======
+Contact
+=======
+**Website:** - https://vilanet.sh
 
-My name is Felipe Vilarinho (A.K.A Vila) and you can know more about me at the social medias below:
+**e-Mail:**
+- fvilarinho@gmail.com
+- fvilarinho@outlook.com
+- me@vila.net.br
 
-1. [LinkedIn](https://br.linkedin.com/in/fvilarinho)
-
-Or send an email to fvilarinho@gmail.com or fvilarinho@concepting.com.br
-
-Have Fun!
-
-Best
+and that's all! Have fun!
