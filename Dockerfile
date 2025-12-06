@@ -7,12 +7,9 @@ ENV SQL_DIR=${HOME_DIR}/sql
 USER root
 
 RUN apk update && \
-    apk --no-cache \ 
-        add mariadb \
-            mariadb-client && \
-    apk --no-cache \ 
-        --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing \ 
-        add etcd-ctl            
+    apk --no-cache add mariadb \
+                       mariadb-client \
+                       etcd-ctl
             
 RUN wget -qO- https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/7.2.0/flyway-commandline-7.2.0-linux-x64.tar.gz | tar xvz && \
 	mv ./flyway-7.2.0 /opt && \
